@@ -244,8 +244,9 @@
 <script>
         var user
         user = netlifyIdentity.currentUser()
-        Console.log(user)
-    //window.location.href = "uploader.html"
+       if user ==true
+            window.location.href = "uploader.html"
+    else break
         
         
         </script>
