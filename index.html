@@ -243,7 +243,8 @@
             ></div>
 <script>
         
-      window.location.href = "/uploader.html" == netlifyIdentity.currentUser()
+    if  (netlifyIdentity.currentUser()==true)
+    window.location.href = "uploader.html"
        
             
         
