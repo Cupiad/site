@@ -3,18 +3,6 @@
   src: url("media/Lato-Regular.ttf");
 }
 
-* {
-  font-family: Lato;
-}
-
-body {
-  /* overflow: hidden; */
-  /* background-image: url("media/background.jpeg"); */
-  /* background-size: auto 100%; */
-  /* background-repeat: no-repeat; */
-  /* background-position: center center; */
-}
-
 hr {
   border: none;
   background-color: #000000;
@@ -35,4 +23,5 @@ hr {
   font-size: 100px;
   font-family: Lato;
   margin: 0;
+  font-family: Lato;
 }
