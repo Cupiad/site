@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <!-- Y u read my code broski, you no trust me ?? -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sill</title>
-  <link rel="shortcut icon" type="icon/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <title>A static website</title>
+
+  <!-- include the widget -->
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-
 <body>
-  <div id="content">
-    <h1 id="header">I am much fag.</h1>
-    <hr>
-  </div>
-</body>
+  <!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+  <div data-netlify-identity-menu></div>
 
+  <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+  <div data-netlify-identity-button>Login with Netlify Identity</div>
+</body>
 </html>
