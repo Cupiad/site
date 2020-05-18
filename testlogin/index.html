@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <title>Identity Example Site</title>
 </head>
@@ -26,6 +26,9 @@
                             <i class="material-icons">menu</i>
                         </a>
                         <ul class="right hide-on-med-and-down">
+                            <li>
+                                    <a href="/">Home</a>
+                            </li>
                             <li>
                                 <a href="/testauth">Test Auth</a>
                             </li>
@@ -73,40 +76,55 @@
                 <div class="col s12">
                 <div class="card-panel grey lighten-5 black-text ">
                     <main>
-                        <p>Welcome to my Netlify Identity sample site. There is a user account set up that you can use to gain access to the "Test Auth" page and the Netlify CMS admin page.</p> 
-                        <p>There are three available routes in addition to this home page:</p>
-                        <ul>
-                            <li>
-                                <strong>Test Auth:</strong> This route is blocked by Netlify JWT access control. You must have a JWT with 'admin' role to enter. Without it, you'll be redirected to Login.
-                            </li>
-                            <li>
-                                <strong>Login:</strong> This page has a 'Login' button. You can log in using the following credentials:
-                                    <blockquote>
-                                        <strong>username:</strong> test@netlify.com <br />  
-                                        <strong>password:</strong> testing
-                                    </blockquote>
-                            </li>
-                            <li>    
-                                <strong>NetlifyCMS:</strong> This link goes to <a href="/admin/">/admin/</a>, the usual path for Netlify CMS. Logging in will give you access to the CMS admin UI, but since this is just a login demo, it doesn't actually have any editing capabilities.
-                            </li>
-                        </ul>
-                        <p> The Netlify <code>_redirects</code> file that I'm using on this site contains: </p>
-                        <pre><code>
-    /testauth/* 200! Role=admin
-    /testauth/ /testlogin 302
-                        </code></pre>
-                        <p>There's some JavaScript on the Test Login page that checks to see if the JWT has expired, and if so, it logs you out of Identity,
-                            and prompts you to log back in. This is not done by default with Identity right now. Identity sessions last longer than JWT sessions.
+                        <p id="primary-text">
+                        You would have been redirected here automatically if you went to the <a href="/testauth">Test Auth</a> page without being logged in.
+                        You can also go to this page by clicking on the 'Login' link at the top of the page. If you want to log in, click the button below.
                         </p>
-                        <p>You can find all of the code for this site in the public repo at <a target="_blank" href="https://github.com/futuregerald/netlify_identity_example">
-                            https://github.com/futuregerald/netlify_identity_example</a> </p>
-                        
+                        <p>You can log in with these credentials:</p>
+                        <blockquote>
+                            <strong>username:</strong> test@netlify.com <br />  
+                            <strong>password:</strong> testing
+                        </blockquote>
+                        <button class="btn waves-effect waves-light black" type="submit" name="action" data-netlify-identity-button><i class="material-icons right"></i></button>
                     </main>
                 </div>
                 </div>
             </div>
            
     </div>
+    <script>
+    // This function does the date comparison and logs the user out if necessary, also updates the text.
+            const updateLoginText = ()=>{
+                document.getElementById("primary-text").textContent="Looks like you've logged in successfully! Now try clicking the 'Test Auth' link at the top!"
+            }
+            const compareDate = (exp) => {
+                const d = Date.now()
+                if (d > exp){
+                console.log("Your identity session has expired")
+                netlifyIdentity.logout();
+                netlifyIdentity.open();
+                } else {
+                console.log("the token hasn't expired, yet")
+                updateLoginText()
+                }
+            }
+            if (window.netlifyIdentity) {
+    // Check if the JWT token is expired, if so log out the user          
+                netlifyIdentity.on("login", user => {
+                console.log(user)
+                compareDate(user.token.expires_at)
+                });
+    // Redirect to the main page after a successful login
+                window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        updateLoginText()
+                    });
+                }
+            });   
+            }
+            
+    </script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script type="text/javascript">
