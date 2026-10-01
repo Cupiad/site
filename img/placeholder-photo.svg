@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#5ad1e6" stroke-opacity=".1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0f1620"/>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <circle cx="400" cy="330" r="120" fill="#ffb347"/>
+  <g fill="#0f1620">
+    <rect x="270" y="290" width="260" height="4"/>
+    <rect x="270" y="310" width="260" height="6"/>
+    <rect x="270" y="332" width="260" height="8"/>
+    <rect x="270" y="356" width="260" height="10"/>
+  </g>
+  <rect y="380" width="800" height="220" fill="#0f1620"/>
+  <g stroke="#5ad1e6" stroke-opacity=".45" fill="none">
+    <path d="M0 380H800"/>
+    <path d="M0 394H800M0 414H800M0 442H800M0 482H800M0 540H800" stroke-opacity=".3"/>
+    <path d="M400 380L-400 600M400 380L-100 600M400 380L150 600M400 380L400 600M400 380L650 600M400 380L900 600M400 380L1200 600" stroke-opacity=".3"/>
+  </g>
+  <text x="32" y="572" fill="#8d919b" font-family="monospace" font-size="14" letter-spacing="2">FIG.03 — PHOTO / REPLACE WITH YOUR OWN</text>
+</svg>

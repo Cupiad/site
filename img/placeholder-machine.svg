@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#5ad1e6" stroke-opacity=".1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0f1620"/>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <g transform="translate(400 280)" fill="none" stroke="#5ad1e6">
+    <circle r="132" stroke-width="26" stroke-opacity=".3" stroke-dasharray="20.73 20.73"/>
+    <circle r="118" stroke-width="2" stroke-opacity=".8"/>
+    <circle r="46" stroke-width="2" stroke-opacity=".8"/>
+    <circle r="14" stroke-width="2" stroke-opacity=".8"/>
+    <g stroke-width="2" stroke-opacity=".6">
+      <circle cx="82" cy="0" r="15"/><circle cx="41" cy="71" r="15"/><circle cx="-41" cy="71" r="15"/>
+      <circle cx="-82" cy="0" r="15"/><circle cx="-41" cy="-71" r="15"/><circle cx="41" cy="-71" r="15"/>
+    </g>
+    <path d="M-185 0H185M0 -185V185" stroke-opacity=".45" stroke-dasharray="10 6"/>
+  </g>
+  <g stroke="#ffb347" stroke-width="1.5" fill="none">
+    <path d="M282 482H518M282 472V492M518 472V492"/>
+  </g>
+  <text x="400" y="512" fill="#ffb347" font-family="monospace" font-size="16" text-anchor="middle">Ø 236</text>
+  <text x="32" y="572" fill="#8d919b" font-family="monospace" font-size="14" letter-spacing="2">FIG.01 — MACHINE / REPLACE WITH PHOTO</text>
+</svg>

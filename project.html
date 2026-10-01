@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Samuel</title>
+  <link rel="icon" href="img/favicon.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="index.html"><img src="img/favicon.svg" alt="" width="20" height="20">Samuel</a>
+      <nav>
+        <a href="index.html#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Filled in by js/main.js from the data in js/projects.js -->
+  <main class="wrap project" id="project"></main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Samuel</span>
+      <span class="footer-links">
+        <a href="mailto:w@sill.dev">E-mail</a>
+        <a href="https://github.com/Cupiad">GitHub</a>
+        <a href="legal.html">Imprint &amp; Privacy</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Full-size image viewer -->
+  <dialog class="lightbox" id="lightbox">
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-close" aria-label="Close">&times;</button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Previous image">&larr;</button>
+    <button type="button" class="lb-btn lb-next" aria-label="Next image">&rarr;</button>
+  </dialog>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

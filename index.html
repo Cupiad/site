@@ -1,14 +1,66 @@
 <!doctype html>
 <html lang="en">
-
 <head>
- 
-    <title>Sill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samuel — Projects</title>
+  <meta name="description" content="Machines and software projects I've designed and built.">
+  <link rel="icon" href="img/favicon.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <span> Sill </span>
 
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="index.html"><img src="img/favicon.svg" alt="" width="20" height="20">Samuel</a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">// Personal project archive</p>
+      <h1>Machines<br>&amp; Software<span class="cursor">_</span></h1>
+      <p class="hero-sub">
+        I design and build machines and write software.
+        This is a collection of things I've made.
+        I also do carpentry and sometimes build actual buildings.
+      </p>
+    </div>
+    <div class="horizon" aria-hidden="true"></div>
+  </section>
+
+  <main class="wrap projects" id="projects">
+    <div class="section-head">
+      <h2>Projects <span class="count" id="project-count"></span></h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="is-active" data-filter="all">All</button>
+        <button type="button" data-filter="machine">Machines</button>
+        <button type="button" data-filter="software">Software</button>
+        <button type="button" data-filter="carpentry">Carpentry</button>
+      </div>
+    </div>
+    <ul class="grid" id="project-grid"></ul>
+    <p class="empty" id="project-empty" hidden>// Nothing here yet</p>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Samuel</span>
+      <span class="footer-links">
+        <a href="mailto:w@sill.dev">E-mail</a>
+        <a href="https://github.com/Cupiad">GitHub</a>
+        <a href="legal.html">Imprint &amp; Privacy</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
